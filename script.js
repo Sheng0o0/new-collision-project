@@ -2,10 +2,14 @@ $(document).ready(function(){
 
 function checkCollision() {
     var blueLeft = $("#blue").offset().left;
+    var blueTop= $("#blue").offset().top;
+    var redTop = $("#red").offset().top;
     var redLeft = $("#red").offset().left;
     var blueRight = blueLeft + $("#blue").width();
+    var blueBottom = blueTop + $("#blue").height();
     var redRight = redLeft + $("#red").width();
-    if(blueRight > redLeft && blueLeft < redRight) {
+    var redBottom = redTop + $("#red").height();
+    if(blueRight > redLeft && blueLeft < redRight && blueBottom > redTop && blueTop < redBottom) {
         alert("Touching");
     }
 }
